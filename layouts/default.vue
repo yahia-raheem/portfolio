@@ -1,55 +1,61 @@
 <template>
   <div>
-    <Nuxt />
+    <HeaderMobile />
+    <section class="main-content">
+      <div class="container-fluid h-mob-100">
+        <div class="row h-mob-100">
+          <div
+            class="col-lg-6 d-lg-flex d-none justify-content-end align-items-center no-padding"
+          >
+            <Cover />
+          </div>
+          <div class="col-lg-6 col-md-12 no-padding route-container">
+            <Nuxt />
+          </div>
+        </div>
+      </div>
+    </section>
+    <NavigationMobile />
   </div>
 </template>
-
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+<style lang="scss">
+.main-content {
+  background-color: #212127;
+  width: 100vw;
+  padding: 64px 0 62px;
+  @include media('>992px') {
+    padding: 0;
+  }
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
+.no-padding {
+  padding: 0;
 }
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+.route-container {
+  overflow: hidden;
+  margin: 20px 0;
+  @include media('>992px') {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.h-mob-100 {
+  @include media('<992px') {
+    height: 100%;
+  }
 }
 </style>
+<script>
+import Cover from '@/components/Cover'
+import NavigationMobile from '@/components/NavigationMobile'
+import HeaderMobile from '@/components/HeaderMobile'
+export default {
+  components: {
+    Cover,
+    NavigationMobile,
+    HeaderMobile,
+  },
+}
+</script>

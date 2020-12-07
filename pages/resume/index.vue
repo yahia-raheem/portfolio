@@ -1,6 +1,6 @@
 <template>
   <div class="about-page page">
-    <h2>about page</h2>
+    <h2>Resume</h2>
   </div>
 </template>
 
