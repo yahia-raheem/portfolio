@@ -1,15 +1,29 @@
 @import "helpers/helpers.scss";
 @import "@/node_modules/animate.css/animate.min.css";
 
+$body-color: #ffffff;
+
 .page {
-    background-color: #31313a;
     position: relative;
+    background-color: #31313a;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 1;
     height: 100%;
+    @include scrollbar(#65656c);
+
     @include media(">992px") {
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
     }
-    z-index: -1;
+    * {
+        color: white;
+    }
+    padding: 20px 20px 0;
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 .page-leave-active {

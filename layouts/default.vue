@@ -5,11 +5,11 @@
       <div class="container-fluid h-mob-100">
         <div class="row h-mob-100">
           <div
-            class="col-lg-6 d-lg-flex d-none justify-content-end align-items-center no-padding"
+            class="col-xl-5 col-lg-6 d-lg-flex d-none justify-content-end align-items-center no-padding"
           >
             <Cover />
           </div>
-          <div class="col-lg-6 col-md-12 no-padding route-container">
+          <div class="col-xl-7 col-lg-6 col-md-12 no-padding route-container">
             <Nuxt />
           </div>
         </div>
@@ -35,10 +35,14 @@
 }
 .route-container {
   overflow: hidden;
-  margin: 20px 0;
+  margin: auto;
+  height: 100%;
   @include media('>992px') {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height: 620px;
+    max-height: 85vh;
+    margin: auto 0;
   }
 }
 .h-mob-100 {

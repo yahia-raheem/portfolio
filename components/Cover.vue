@@ -1,7 +1,6 @@
 <template>
-  <div class="cover-container shadow">
+  <div class="cover-container">
     <Navigation />
-    <div class="cover-shadow"></div>
     <div class="cover-header">
       <div class="img-container cover-img">
         <img
@@ -58,12 +57,24 @@ export default {
 <style lang="scss">
 .cover-container {
   background-color: #31313a;
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   height: 680px;
   width: 400px;
   max-height: 90vh;
   position: relative;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+  &:after {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    width: 100%;
+    height: 100%;
+    background: #31313a;
+    opacity: 0.3;
+    z-index: -1;
+  }
   @include media('>1150px') {
     width: 480px;
   }
