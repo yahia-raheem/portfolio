@@ -3,43 +3,48 @@
     <Navigation />
     <div class="cover-header">
       <div class="img-container cover-img">
-        <img
-          src="https://images.pexels.com/photos/681467/pexels-photo-681467.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-          alt=""
-          class="bg-image"
-        />
+        <resp-img :payload="info.cover_pic" />
       </div>
       <div class="profile-image img-container">
-        <img
-          src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-          alt=""
-          class="bg-image"
+        <resp-img
+          :payload="info.profile_pic"
+          :sizes="[{ width: 300 }, { width: 600 }]"
         />
       </div>
     </div>
     <div class="data">
-      <h1 class="title">Yahia Ali</h1>
-      <div class="sub">Wed Developer</div>
+      <h1 class="title">{{ info.name }}</h1>
+      <div class="sub">{{ info.job }}</div>
       <div class="social d-flex justify-content-between align-items-center">
-        <a class="inst" href="#" target="_blank"
+        <a v-if="info.insta" class="inst" :href="info.insta" target="_blank"
           ><i class="fab fa-instagram"></i
         ></a>
-        <a class="lin" href="#" target="_blank"
+        <a
+          v-if="info.linked_in"
+          class="lin"
+          :href="info.linked_in"
+          target="_blank"
           ><i class="fab fa-linkedin-in"></i
         ></a>
-        <a class="fb" href="#" target="_blank"
+        <a v-if="info.facebook" class="fb" :href="info.facebook" target="_blank"
           ><i class="fab fa-facebook-f"></i
         ></a>
-        <a class="tw" href="#" target="_blank"
+        <a v-if="info.twitter" class="tw" :href="info.twitter" target="_blank"
           ><i class="fab fa-twitter"></i
         ></a>
-        <a class="yt" href="#" target="_blank"
+        <a v-if="info.youtube" class="yt" :href="info.youtube" target="_blank"
           ><i class="fab fa-youtube"></i
         ></a>
       </div>
     </div>
     <div class="cta">
-      <a href="#"><span>DOWNLOAD CV</span><i class="fas fa-download"></i></a>
+      <a
+        v-for="one in info.resume"
+        :key="one.ID"
+        :href="one.url"
+        target="_blank"
+        ><span>DOWNLOAD CV</span><i class="fas fa-download"></i
+      ></a>
       <a href="#"><span>CONTACT ME</span><i class="fas fa-paper-plane"></i></a>
     </div>
   </div>
@@ -50,6 +55,11 @@ import Navigation from '@/components/Navigation'
 export default {
   components: {
     Navigation,
+  },
+  computed: {
+    info() {
+      return this.$store.getters.general
+    },
   },
 }
 </script>

@@ -13,5 +13,19 @@ export default (context, inject) => {
       return res.data
     }
   }
+  const getImage = async (id) => {
+    const images = context.store.getters.images
+    const check = images.find((el) => Number(el.id) === Number(id))
+    if (check) {
+      return check
+    } else {
+      const res = await axios.get(
+        `http://portfolio.local/wp-json/generaldata/v1/getimage/${Number(id)}`
+      )
+      context.store.dispatch('addImage', res.data)
+      return res.data
+    }
+  }
   inject('fetchPage', fetchPage)
+  inject('getImage', getImage)
 }

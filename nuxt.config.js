@@ -23,7 +23,8 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    { src: '~/plugins/pageMethods.js' }
+    { src: '~/plugins/pageMethods.js' },
+    { src: '~/plugins/uiPlugins.js' }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -41,7 +42,8 @@ export default {
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    '@nuxt/image'
   ],
   styleResources: {
     scss: [
@@ -50,7 +52,9 @@ export default {
       'assets/scss/helpers/_queries.scss'
     ]
   },
-
+  image: {
+    sizes: [320, 420, 768, 1024, 1200]
+  },
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
 
