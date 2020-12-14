@@ -44,7 +44,7 @@ export const actions = {
   },
   async nuxtServerInit(vcontext, context) {
     const { data } = await axios.get(
-      'http://portfolio.local/wp-json/generaldata/v1/social/'
+      `${process.env.baseUrl}/wp-json/generaldata/v1/social/`
     )
     vcontext.commit('SET_GENERAL', data)
   },

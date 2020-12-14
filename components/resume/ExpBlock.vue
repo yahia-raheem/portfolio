@@ -2,7 +2,9 @@
   <div class="exp-block">
     <div class="bhead">
       <div class="btitle">
-        <div class="datedata">{{ from }} - {{ to }}</div>
+        <div :class="{ datedata: true, active: to == 'present' }">
+          {{ from }} - {{ to }}
+        </div>
         <h6 class="title">{{ title }}</h6>
         <span class="sub">{{ subtitle }}</span>
       </div>
@@ -19,6 +21,22 @@
 <style lang="scss" scoped>
 .exp-block {
   margin-top: 25px;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: radial-gradient(
+      ellipse at left,
+      rgba(197, 202, 213, 0.15) 0%,
+      rgba(255, 255, 255, 0) 70%
+    );
+  }
   .bhead {
     display: flex;
     justify-content: space-between;
@@ -31,13 +49,16 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      border: 2px solid $primary;
       width: fit-content;
-      color: $primary;
       font-size: 0.8rem;
       text-transform: capitalize;
       padding: 0 5px;
       margin-bottom: 15px;
+      border: 2px solid;
+      &.active {
+        color: $primary;
+        border-color: $primary;
+      }
     }
     .title {
       color: white;

@@ -58,6 +58,10 @@ export default {
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
 
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://portfolio.local'
+  },
+
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     postcss: {

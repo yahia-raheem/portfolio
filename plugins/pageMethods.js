@@ -7,7 +7,7 @@ export default (context, inject) => {
       return page
     } else {
       const res = await axios.get(
-        `http://portfolio.local/wp-json/wp/v2/pages/${id}`
+        `${process.env.baseUrl}/wp-json/wp/v2/pages/${id}`
       )
       context.store.dispatch('addPage', res.data)
       return res.data
@@ -20,7 +20,7 @@ export default (context, inject) => {
       return check
     } else {
       const res = await axios.get(
-        `http://portfolio.local/wp-json/generaldata/v1/getimage/${Number(id)}`
+        `${process.env.baseUrl}/wp-json/generaldata/v1/getimage/${Number(id)}`
       )
       context.store.dispatch('addImage', res.data)
       return res.data

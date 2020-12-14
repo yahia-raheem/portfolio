@@ -29,20 +29,32 @@
         />
       </div>
     </div>
+    <div class="row">
+      <div class="col-12">
+        <sec-title title="Skills" />
+      </div>
+    </div>
+    <div class="row skills-row">
+      <div v-for="(skillg, i) in skills" :key="i" class="col-6 skillg-col">
+        <skill-block :payload="skillg" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import TitlewImage from '@/components/resume/TitlewImage'
 import ExpBlock from '@/components/resume/ExpBlock'
+import SkillBlock from '~/components/resume/SkillBlock.vue'
 export default {
-  components: { TitlewImage, ExpBlock },
+  components: { TitlewImage, ExpBlock, SkillBlock },
   async asyncData({ route, store, $axios, app, $fetchPage }) {
     const data = await $fetchPage(36)
     return {
       title: data.title.rendered,
       content: data.meta_box.wysiwyg_b864hamwc5,
       eduexp: data.meta_box.group_dzcaufx9r8k,
+      skills: data.meta_box.group_ik5te4bw3h,
     }
   },
   computed: {
@@ -87,6 +99,21 @@ export default {
         rgba(255, 255, 255, 0) 70%
       );
     }
+  }
+}
+.skillg-col:nth-of-type(even) {
+  &::before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: radial-gradient(
+      ellipse at top,
+      rgba(197, 202, 213, 0.15) 0%,
+      rgba(255, 255, 255, 0) 70%
+    );
   }
 }
 </style>
