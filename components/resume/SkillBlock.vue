@@ -14,14 +14,21 @@
           ></b-progress>
         </div>
       </div>
-      <div v-if="rangeType === 'dots'" class="dots">
-        <h6 class="title">{{ x.text_f1g32zbx29 }}</h6>
-        <span
-          v-for="(x, i) in Array(10)"
-          :key="i"
-          class="dot"
-          :data-index="i"
-        ></span>
+      <div v-if="rangeType === 'dots'">
+        <div v-for="(x, i) in skills" :key="i" class="dots">
+          <h6 class="title">{{ x.text_f1g32zbx29 }}</h6>
+          <span
+            v-for="(y, z) in Array(10)"
+            :key="z"
+            :class="[
+              {
+                dot: true,
+                active: checkDots(x.range_3gge3yl61s1, z),
+              },
+            ]"
+            :data-index="z"
+          ></span>
+        </div>
       </div>
     </div>
     <div v-if="type === 'check'" class="check">
@@ -42,6 +49,20 @@
           color: white;
         }
         .progress .progress-bar {
+          background-color: $primary;
+        }
+      }
+    }
+    .dots {
+      .title {
+        color: white;
+      }
+      .dot {
+        display: inline-block;
+        @include appDir(margin-right, 10px, margin-left, 10px);
+        @include circle(14px);
+        background-color: #3e4148;
+        &.active {
           background-color: $primary;
         }
       }
@@ -102,6 +123,13 @@ export default {
           ? payload.group_xnc937ritk
           : payload.text_bosn5vbyzy8
       this.rangeType = this.type === 'range' ? payload.select_y4qnqrmhvtn : null
+    },
+    checkDots(value, index) {
+      if (value / 10 > index) {
+        return true
+      } else {
+        return false
+      }
     },
   },
 }

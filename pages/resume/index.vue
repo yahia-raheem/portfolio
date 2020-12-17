@@ -39,15 +39,21 @@
         <skill-block :payload="skillg" />
       </div>
     </div>
+    <div class="row testimonials">
+      <div class="col-12">
+        <testimonials :payload="testimonials" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import TitlewImage from '@/components/resume/TitlewImage'
 import ExpBlock from '@/components/resume/ExpBlock'
-import SkillBlock from '~/components/resume/SkillBlock.vue'
+import SkillBlock from '@/components/resume/SkillBlock.vue'
+import Testimonials from '@/components/resume/Testimonials'
 export default {
-  components: { TitlewImage, ExpBlock, SkillBlock },
+  components: { TitlewImage, ExpBlock, SkillBlock, Testimonials },
   async asyncData({ route, store, $axios, app, $fetchPage }) {
     const data = await $fetchPage(36)
     return {
@@ -55,6 +61,7 @@ export default {
       content: data.meta_box.wysiwyg_b864hamwc5,
       eduexp: data.meta_box.group_dzcaufx9r8k,
       skills: data.meta_box.group_ik5te4bw3h,
+      testimonials: data.meta_box.group_5et364ufxr8,
     }
   },
   computed: {
