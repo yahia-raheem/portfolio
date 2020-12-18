@@ -7,13 +7,13 @@
       <b-link to="/resume"> <i class="fas fa-file-alt"></i> RESUME</b-link>
     </div>
     <div class="item">
-      <b-link to="/works"> <i class="fas fa-file-alt"></i> WORKS</b-link>
+      <b-link to="/works"> <i class="fas fa-paint-brush"></i> WORKS</b-link>
     </div>
     <div class="item">
-      <b-link to="/blog"> <i class="fas fa-file-alt"></i> BLOG</b-link>
+      <b-link to="/blog"> <i class="far fa-comment-dots"></i> BLOG</b-link>
     </div>
     <div class="item">
-      <b-link to="/contact"> <i class="fas fa-file-alt"></i> CONTACT</b-link>
+      <b-link to="/contact"> <i class="fas fa-at"></i> CONTACT</b-link>
     </div>
   </div>
 </template>

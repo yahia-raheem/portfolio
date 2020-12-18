@@ -58,7 +58,6 @@ export default {
     const data = await $fetchPage(36)
     return {
       title: data.title.rendered,
-      content: data.meta_box.wysiwyg_b864hamwc5,
       eduexp: data.meta_box.group_dzcaufx9r8k,
       skills: data.meta_box.group_ik5te4bw3h,
       testimonials: data.meta_box.group_5et364ufxr8,

@@ -45,11 +45,16 @@
 </style>
 <script>
 import WorkBox from '@/components/works/WorkBox.vue'
+
 export default {
   components: { WorkBox },
   data() {
     return {
-      works: this.pageData().meta_box.group_5ps5r8xhoso,
+      works: this.pageData().meta_box.group_5ps5r8xhoso.filter((item) => {
+        return item.text_75y06fydt1k.includes(
+          String(this.$route.params.section)
+        )
+      }),
     }
   },
   methods: {
