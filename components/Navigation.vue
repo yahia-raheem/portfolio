@@ -1,7 +1,9 @@
 <template>
   <div class="navigation navigation-desktop">
     <div class="item">
-      <b-link to="/"> <i class="fas fa-user"></i> ABOUT</b-link>
+      <b-link to="/" class="def-route">
+        <i class="fas fa-user"></i> ABOUT</b-link
+      >
     </div>
     <div class="item">
       <b-link to="/resume"> <i class="fas fa-file-alt"></i> RESUME</b-link>
@@ -79,7 +81,8 @@ export default {
       justify-content: center;
       align-items: center;
       flex-flow: column;
-      &.nuxt-link-active.nuxt-link-exact-active {
+      &:not(.def-route).nuxt-link-active,
+      &.nuxt-link-exact-active {
         color: $primary;
         i {
           color: $primary;

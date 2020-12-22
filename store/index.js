@@ -3,6 +3,7 @@ export const state = () => ({
   pages: [],
   general: [],
   images: [],
+  blogs: [],
 })
 
 export const getters = {
@@ -14,6 +15,9 @@ export const getters = {
   },
   images(state) {
     return state.images
+  },
+  blogs(state) {
+    return state.blogs
   },
 }
 
@@ -30,6 +34,12 @@ export const mutations = {
   ADD_IMAGE(state, image) {
     state.images.push(image)
   },
+  SET_BLOGS(state, blogs) {
+    state.blogs = blogs
+  },
+  ADD_BLOG(state, blog) {
+    state.blogs.push(blog)
+  },
 }
 
 export const actions = {
@@ -42,10 +52,20 @@ export const actions = {
   addImage({ commit }, image) {
     commit('ADD_IMAGE', image)
   },
+  setBlogs({ commit }, blogs) {
+    commit('SET_BLOGS', blogs)
+  },
+  addBlog({ commit }, blog) {
+    commit('ADD_BLOG', blog)
+  },
   async nuxtServerInit(vcontext, context) {
     const { data } = await axios.get(
       `${process.env.baseUrl}/wp-json/generaldata/v1/social/`
     )
     vcontext.commit('SET_GENERAL', data)
+    const blogsres = await axios.get(
+      `${process.env.baseUrl}/wp-json/wp/v2/blog/`
+    )
+    vcontext.commit('SET_BLOGS', blogsres.data)
   },
 }

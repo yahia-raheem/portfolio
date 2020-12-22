@@ -45,21 +45,6 @@
     .bimg {
       width: 25%;
     }
-    .datedata {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: fit-content;
-      font-size: 0.8rem;
-      text-transform: capitalize;
-      padding: 0 5px;
-      margin-bottom: 15px;
-      border: 2px solid;
-      &.active {
-        color: $primary;
-        border-color: $primary;
-      }
-    }
     .title {
       color: white;
       font-weight: bold;

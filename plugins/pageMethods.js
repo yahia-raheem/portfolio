@@ -26,6 +26,12 @@ export default (context, inject) => {
       return res.data
     }
   }
+  const fetchBlog = (id) => {
+    const blogs = context.store.getters.blogs
+    const blog = blogs.find((el) => Number(el.id) === Number(id))
+    return blog
+  }
   inject('fetchPage', fetchPage)
   inject('getImage', getImage)
+  inject('fetchBlog', fetchBlog)
 }

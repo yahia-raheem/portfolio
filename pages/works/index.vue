@@ -11,38 +11,6 @@
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
-.work-row {
-  position: relative;
-  &::after {
-    margin: 0 0 0 -1px;
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    width: 1px;
-    height: 100%;
-    background: radial-gradient(
-      ellipse at top,
-      rgba(197, 202, 213, 0.15) 0%,
-      rgba(255, 255, 255, 0) 70%
-    );
-  }
-  &::before {
-    content: '';
-    position: absolute;
-    left: -30px;
-    right: 0;
-    top: 0;
-    height: 1px;
-    background: radial-gradient(
-      ellipse at left,
-      rgba(197, 202, 213, 0.15) 0%,
-      rgba(255, 255, 255, 0) 70%
-    );
-  }
-}
-</style>
 <script>
 import WorkBox from '@/components/works/WorkBox.vue'
 export default {

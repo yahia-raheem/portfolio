@@ -1,7 +1,9 @@
 <template>
   <div class="navigation-mobile">
     <div class="item">
-      <b-link to="/"> <i class="fas fa-user"></i> ABOUT</b-link>
+      <b-link to="/" class="def-route">
+        <i class="fas fa-user"></i> ABOUT</b-link
+      >
     </div>
     <div class="item">
       <b-link to="/resume"> <i class="fas fa-file-alt"></i> RESUME</b-link>
