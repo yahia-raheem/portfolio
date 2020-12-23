@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <div class="blog-box">
     <div class="img-container" data-aspectRatio="16/9">

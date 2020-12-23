@@ -45,7 +45,9 @@
         target="_blank"
         ><span>DOWNLOAD CV</span><i class="fas fa-download"></i
       ></a>
-      <a href="#"><span>CONTACT ME</span><i class="fas fa-paper-plane"></i></a>
+      <nuxt-link to="/contact"
+        ><span>CONTACT ME</span><i class="fas fa-paper-plane"></i
+      ></nuxt-link>
     </div>
   </div>
 </template>

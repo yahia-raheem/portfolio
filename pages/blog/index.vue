@@ -25,8 +25,5 @@ export default {
       blogs: this.$store.getters.blogs,
     }
   },
-  mounted() {
-    console.log(this.blogs)
-  },
 }
 </script>

@@ -49,7 +49,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .pb-container {
   display: grid;
   grid-template-columns: 1fr 1fr;

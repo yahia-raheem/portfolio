@@ -26,9 +26,15 @@ export default (context, inject) => {
       return res.data
     }
   }
-  const fetchBlog = (id) => {
-    const blogs = context.store.getters.blogs
-    const blog = blogs.find((el) => Number(el.id) === Number(id))
+  const fetchBlog = async (id) => {
+    let blogs = context.store.getters.blogs
+    let blog = blogs.find((el) => Number(el.id) === Number(id))
+    if (!blog) {
+      const res = await axios.get(`${process.env.baseUrl}/wp-json/wp/v2/blog/`)
+      context.store.dispatch('setBlogs', res.data)
+      blogs = context.store.getters.blogs
+      blog = blogs.find((el) => Number(el.id) === Number(id))
+    }
     return blog
   }
   inject('fetchPage', fetchPage)
