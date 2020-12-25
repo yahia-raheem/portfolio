@@ -62,7 +62,7 @@ export default {
   axios: {},
 
   env: {
-    baseUrl: process.env.BASE_URL || 'http://portfolio.local'
+    baseUrl: process.env.BASE_URL || 'https://projects.yahiadev.com/portfolio'
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
