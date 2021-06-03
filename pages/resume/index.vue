@@ -35,7 +35,11 @@
       </div>
     </div>
     <div class="row skills-row">
-      <div v-for="(skillg, i) in skills" :key="i" class="col-6 skillg-col">
+      <div
+        v-for="(skillg, i) in skills"
+        :key="i"
+        class="col-lg-6 col-md-12 skillg-col"
+      >
         <skill-block :payload="skillg" />
       </div>
     </div>
@@ -105,6 +109,11 @@ export default {
         rgba(255, 255, 255, 0) 70%
       );
     }
+  }
+}
+@include media('<992px') {
+  .skillg-col {
+    margin-bottom: 15px;
   }
 }
 .skillg-col:nth-of-type(even) {

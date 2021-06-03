@@ -1,12 +1,14 @@
 <template>
-  <nuxt-picture
-    :placeholder="true"
-    :src="payload.src"
-    :alt="payload.alt"
-    format="webp"
-    :sizes="sizes.length > 0 ? sizes : null"
-    :responsive="true"
-  />
+  <client-only>
+    <nuxt-picture
+      :placeholder="true"
+      :src="payload.src"
+      :alt="payload.alt"
+      format="webp"
+      :sizes="sizes.length > 0 ? sizes : null"
+      :responsive="true"
+    />
+  </client-only>
 </template>
 
 <script>

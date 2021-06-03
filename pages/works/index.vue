@@ -1,7 +1,11 @@
 <template>
   <div>
     <div class="row work-row pt-4">
-      <div v-for="(item, index) in works" :key="index" class="col-6">
+      <div
+        v-for="(item, index) in works"
+        :key="index"
+        class="col-lg-6 col-md-12"
+      >
         <work-box
           :imgid="item.single_image_mdxqun8wsjn"
           :link="item.url_34dfru7srbj"

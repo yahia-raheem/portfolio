@@ -7,24 +7,25 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-    {
-      rel: 'stylesheet',
-      href: 'https://use.fontawesome.com/releases/v5.15.1/css/all.css',
-      integrity: 'sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp',
-      crossorigin: 'anonymous'
-    }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://use.fontawesome.com/releases/v5.15.1/css/all.css',
+        integrity:
+          'sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp',
+        crossorigin: 'anonymous',
+      },
+    ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [
-    '@/assets/scss/entry.scss'
-  ],
+  css: ['@/assets/scss/entry.scss'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     { src: '~/plugins/pageMethods.js' },
-    { src: '~/plugins/uiPlugins.js' }
+    { src: '~/plugins/uiPlugins.js' },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -34,10 +35,13 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    ['@nuxtjs/date-fns', {
-      defaultLocale: 'en_GB',
-      format: 'yyyy-MM-dd',
-    }]
+    [
+      '@nuxtjs/date-fns',
+      {
+        defaultLocale: 'en_GB',
+        format: 'yyyy-MM-dd',
+      },
+    ],
   ],
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
@@ -46,23 +50,23 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
-    '@nuxt/image'
+    '@nuxt/image',
   ],
   styleResources: {
     scss: [
       'assets/scss/helpers/_mixins.scss',
       'assets/scss/helpers/_constants.scss',
-      'assets/scss/helpers/_queries.scss'
-    ]
+      'assets/scss/helpers/_queries.scss',
+    ],
   },
   image: {
-    sizes: [320, 420, 768, 1024, 1200]
+    sizes: [320, 420, 768, 1024, 1200],
   },
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
 
   env: {
-    baseUrl: process.env.BASE_URL || 'https://projects.yahiadev.com/portfolio'
+    baseUrl: process.env.BASE_URL || 'https://projects.yahiadev.com/portfolio',
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
@@ -75,14 +79,14 @@ export default {
         'postcss-url': false,
         'postcss-nesting': {},
         'postcss-responsive-type': {},
-        'postcss-hexrgba': {}
+        'postcss-hexrgba': {},
       },
       preset: {
         // Change the postcss-preset-env settings
         autoprefixer: {
-          grid: true
-        }
-      }
+          grid: true,
+        },
+      },
     },
   },
 }

@@ -109,7 +109,7 @@ export default {
         form.append(field, emailBody[field])
       }
       const res = await this.$axios.post(
-        'http://portfolio.local/wp-json/contact-form-7/v1/contact-forms/63/feedback',
+        'https://projects.yahiadev.com/portfolio/wp-json/contact-form-7/v1/contact-forms/63/feedback',
         form
       )
       if (res.data.status === 'mail_sent') {

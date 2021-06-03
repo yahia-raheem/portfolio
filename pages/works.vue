@@ -7,6 +7,7 @@
   </div>
 </template>
 <script>
+import TitleWithNavVue from '~/components/UI/TitleWithNav.vue'
 export default {
   async asyncData({ $fetchPage }) {
     const data = await $fetchPage(45)
@@ -17,7 +18,6 @@ export default {
       navs: data.meta_box.text_bdr7wljzxhg,
     }
   },
+  component: [TitleWithNavVue],
 }
 </script>
-
-TitleWithNav

@@ -2,7 +2,11 @@
   <div class="blog-page page">
     <sec-title title="Blog Posts" />
     <div class="row work-row pt-4">
-      <div v-for="(item, index) in blogs" :key="index" class="col-6">
+      <div
+        v-for="(item, index) in blogs"
+        :key="index"
+        class="col-lg-6 col-md-12"
+      >
         <blog-box
           :date="item.date"
           :excerpt="item.excerpt.rendered"

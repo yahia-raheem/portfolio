@@ -53,5 +53,9 @@ export default {
 .pb-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  @include media('<992px') {
+    display: flex;
+    flex-direction: column;
+  }
 }
 </style>

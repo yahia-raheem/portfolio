@@ -1,11 +1,11 @@
 <template>
   <div class="row t-row mb-4">
-    <div class="col-2">
+    <div class="col-lg-2 col-md-12">
       <h5 class="section-title">
         {{ title }}
       </h5>
     </div>
-    <div class="col-10">
+    <div class="col-lg-10 col-md-12">
       <client-only>
         <b-nav>
           <b-nav-item><nuxt-link to="/works">all</nuxt-link></b-nav-item>
